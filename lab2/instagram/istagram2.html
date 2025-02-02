@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.cdninstagram.com/rsrc.php/y4/r/QaBlI0OZiks.ico" />
+    <link rel="stylesheet" href="style.css">
+    <title>Instagram</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            outline: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafafa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .main-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            min-height: 100vh;
+            margin: auto;
+        }
+
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 380px;
+        }
+
+        .login-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #dbdbdb;
+            background-color: #fff;
+            width: 350px;
+        }
+
+        .login-box img.logo {
+            width: 180px;
+            margin: 20px 0;
+        }
+
+        .input-field {
+            width: 85%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #dbdbdb;
+            margin: 5px;
+            background-color: #fafafa;
+        }
+
+        .btn-login {
+            width: 90%;
+            padding: 10px;
+            font-weight: bold;
+            background-color: #0095f6;
+            border: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            color: white;
+            cursor: pointer;
+        }
+
+        .separator {
+            margin: 15px 0;
+            font-size: 14px;
+            color: #8e8e8e;
+        }
+
+        .separator::before, .separator::after {
+            content: '';
+            display: inline-block;
+            width: 100px;
+            height: 1px;
+            background: #dbdbdb;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+        .fb-login {
+            font-weight: bold;
+            color: #385185;
+            margin-top: 10px;
+        }
+
+        .signup-box {
+            text-align: center;
+            border: 1px solid #dbdbdb;
+            padding: 15px;
+            background-color: #fff;
+            width: 350px;
+            margin-top: 10px;
+        }
+
+        .download-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .store-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .store-links img {
+            width: 130px;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-container">
+        <div class="image-container">
+            <img src="page.png" alt="Instagram Mobile View">        
+        </div>
+        <div class="login-section">
+            <div class="login-box">
+                <img class="logo" src="insta.png" alt="Instagram Logo">
+                <input type="text" class="input-field" placeholder="Телефон, имя пользователя или эл. адрес" required>
+                <input type="password" class="input-field" placeholder="Пароль" required>
+                <button class="btn-login">Войти</button>
+                <p class="separator">или</p>
+                <a href="#" class="fb-login">Войти через Facebook</a>
+            </div>
+            <div class="signup-box">
+                <p><strong>У вас ещё нет аккаунта?</strong> <a href="#">Зарегистрироваться</a></p>
+            </div>
+            <div class="download-section">
+                <p>Установите приложение.</p>
+                <div class="store-links">
+                    <img src="apple.png" alt="App Store">
+                    <img src="google.png" alt="Google Play">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
