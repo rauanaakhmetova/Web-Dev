@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f2f2f2;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: white;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo img {
+            height: 30px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 14px;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url('banner.png') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        .hero-content {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+        }
+        .hero-content h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .hero-content p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .hero-content button {
+            padding: 10px 20px;
+            background: #0067b8;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .hero-content button:hover {
+            background: #0056a3;
+        }
+        .product-section {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product-card {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .product-card p {
+            font-size: 14px;
+            color: #555;
+        }
+        .developer-direct {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 250px;
+            text-align: center;
+            margin: 20px auto;
+        }
+        .developer-direct h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .developer-direct p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .developer-direct button {
+            padding: 8px 16px;
+            background: #0067b8;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .developer-direct button:hover {
+            background: #0056a3;
+        }
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Microsoft Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="#">Microsoft 365</a>
+            <a href="#">Teams</a>
+            <a href="#">Surface</a>
+            <a href="#">Xbox</a>
+            <a href="#">Support</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Meet Surface Pro</h1>
+            <p>This laptop's unrivalled flexibility and Al features like Live Captions and Cocreator enable you to do more than you ever imagined.</p>
+            <button>Learn More</button>
+        </div>
+    </section>
+    <section class="product-section">
+        <div class="product-card">
+            <img src="laptop.png" alt="Surface Laptop">
+            <h3>Surface Laptop</h3>
+            <p>Unlock Al features like Live Captions and Cocrestor with this exceptionally powerful laptop.</p>
+            <button>Shop Now</button>
+        </div>
+        <div class="product-card">
+            <img src="xbox.png" alt="Xbox Series S">
+            <h3>Xbox Series S</h3>
+            <p>Next-gen performance in the smallest Xbox ever.</p>
+            <button>Shop Now</button>
+        </div>
+        <div class="product-card">
+            <img src="controller.png" alt="Xbox Controllers">
+            <h3>Xbox Controllers</h3>
+            <p>Elite, wireless, adaptive - find the Controller that fits your style of play.</p>
+            <button>Shop Now</button>
+        </div>
+        <div class="product-card">
+            <img src="developer_direct.png" alt="Xbox Controllers">
+            <h3>Xbox presents Developer Direct</h3>
+            <p>Tune in January 23 at 10 AM PT to hear directly from developers.</p> 
+            <button>Learn More</button>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2025 Microsoft. All rights reserved.</p>
+    </footer>
+</body>
+</html>
