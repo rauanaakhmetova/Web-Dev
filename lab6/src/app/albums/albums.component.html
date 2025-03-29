@@ -1,0 +1,73 @@
+<div class="albums-container">
+  <h1 class="page-title">My Albums Collection</h1>
+  
+  <div class="create-form">
+    <h2>Create New Album</h2>
+    <div class="form-group">
+      <input 
+        type="text" 
+        [(ngModel)]="newAlbumTitle" 
+        placeholder="Give your album a beautiful name..." 
+        class="form-control"
+      />
+      <button 
+        (click)="createAlbum()" 
+        [disabled]="!newAlbumTitle.trim()"
+        class="btn create-btn"
+      >
+        Create Album
+      </button>
+    </div>
+  </div>
+  
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div> Loading your creative collection...
+  </div>
+  
+  <div *ngIf="error" class="error">
+    <span class="error-icon">⚠️</span> {{ error }}
+  </div>
+  
+  <div class="search-container">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      placeholder="Find your inspiration..." 
+      class="search-input"
+    />
+  </div>
+  
+  <div class="albums-list">
+    <div *ngFor="let album of filteredAlbums" class="album-card">
+      <div class="album-title">
+        <a [routerLink]="['/albums', album.id]">
+          <span class="album-name" [class.truncated]="!showFullTitles">
+            {{ album.title | titlecase }}
+          </span>
+          <div class="album-preview" *ngIf="showFullTitles">
+            <div class="preview-image"></div>
+            <div class="preview-image"></div>
+            <div class="preview-image"></div>
+          </div>
+        </a>
+      </div>
+      <div class="album-actions">
+        <button (click)="deleteAlbum(album.id)" class="btn delete-btn" title="Delete Album">
+          <span class="icon">🗑️</span>
+        </button>
+      </div>
+    </div>
+    
+    <div *ngIf="filteredAlbums.length === 0 && !loading" class="no-results">
+      Your search didn't match any albums. Try something different?
+    </div>
+  </div>
+  
+  <div class="options">
+    <label class="toggle-container">
+      <input type="checkbox" [(ngModel)]="showFullTitles">
+      <span class="checkmark"></span>
+      <span class="toggle-label">Show full album details</span>
+    </label>
+  </div>
+</div>

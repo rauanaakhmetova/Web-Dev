@@ -1,0 +1,65 @@
+<div class="photos-container">
+  <div class="header-section">
+    <h2>Album Photos Gallery</h2>
+    <button (click)="goBack()" class="btn back-btn">
+      <span class="back-icon">←</span> Return to Album
+    </button>
+  </div>
+  
+  <div class="search-container">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      placeholder="Search photos by title or ID..." 
+      class="search-input"
+      (input)="filterPhotos()"
+    />
+    <div class="filters">
+      <button 
+        class="filter-btn" 
+        [class.active]="currentView === 'grid'" 
+        (click)="changeView('grid')"
+      >
+        Grid View
+      </button>
+      <button 
+        class="filter-btn" 
+        [class.active]="currentView === 'list'" 
+        (click)="changeView('list')"
+      >
+        List View
+      </button>
+    </div>
+  </div>
+  
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div> 
+    <span>Loading your beautiful photos...</span>
+  </div>
+  
+  <div *ngIf="error" class="error">
+    <span class="error-icon">⚠️</span> 
+    <span>{{ error }}</span>
+  </div>
+  
+  <div *ngIf="filteredPhotos.length === 0 && !loading && !error" class="no-photos">
+    No photos found matching your search.
+  </div>
+  
+  <div [class]="currentView === 'grid' ? 'photos-grid' : 'photos-list'">
+    <div *ngFor="let photo of filteredPhotos" class="photo-item">
+      <div class="photo-header">
+        <span class="photo-id">Photo #{{ photo.id }}</span>
+        <a [href]="photo.url" target="_blank" class="full-size-link">Full Image</a>
+      </div>
+      <div class="photo-content" [class.list-view]="currentView === 'list'">
+        <div class="img-container">
+          <img [src]="photo.thumbnailUrl" [alt]="photo.title">
+        </div>
+        <div class="photo-details">
+          <h3 class="photo-title">{{ photo.title | titlecase }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

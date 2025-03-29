@@ -1,0 +1,36 @@
+<div class="album-detail-container">
+  <h2>Album Details</h2>
+  
+  <div *ngIf="loading" class="loading">
+    Loading album details...
+  </div>
+  
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+  
+  <div *ngIf="album && !loading" class="album-form">
+    <div class="form-group">
+      <label for="album-title">Album Title</label>
+      <input 
+        id="album-title"
+        type="text" 
+        [(ngModel)]="album.title" 
+        class="form-control"
+        placeholder="Enter album title"
+      />
+    </div>
+    
+    <div class="album-actions">
+      <button (click)="save()" class="btn save-btn">Save Changes</button>
+      <button (click)="goBack()" class="btn back-btn">Return</button>
+      <a [routerLink]="['/albums', album.id, 'photos']" class="btn photos-btn">
+        View Photos
+      </a>
+    </div>
+    
+    <div *ngIf="isSaved" class="save-success">
+      Album successfully updated!
+    </div>
+  </div>
+</div>
